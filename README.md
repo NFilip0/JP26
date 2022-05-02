@@ -1,1 +1,1 @@
-# JP26
+# EDUNOVA learning course.
