@@ -1,6 +1,6 @@
 # hash je komentar
 # sljedecu liniju bez pocetnog hash znaka izvesti u cmd
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\EdunovaJP26polaznik\SQL\edunovajp26
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Primjeri\edunovajp26
 
 drop database if exists edunovajp26;
 create database edunovajp26;

@@ -1,4 +1,4 @@
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\EdunovaJP26polaznik\SQL\vjezba1.sql
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Vjezbe\vjezba1.sql
 
 drop database if exists vjezba1;
 create database vjezba1;
