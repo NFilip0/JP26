@@ -3,7 +3,7 @@
 # Jedna djelatnica radi s više korisnika. 
 # Korisnik tijekom jednog posjeta koristi jednu uslugu.
 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\frizerski_salon
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\frizerski_salon.sql
 
 drop database if exists frizerski_salon;
 create database frizerski_salon;

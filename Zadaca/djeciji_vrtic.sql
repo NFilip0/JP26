@@ -4,7 +4,7 @@
 # i vodi ih jedna odgajateljica. 
 # Odgajateljica ima jednu stručnu spremu.
 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\djeciji_vrtic
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\djeciji_vrtic.sql
 
 drop database if exists djeciji_vrtic;
 create database djeciji_vrtic;

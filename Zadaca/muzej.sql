@@ -4,7 +4,7 @@
 # Svaki kustos je zadužen za jednu izložbu. 
 # Svaka izložba ima jednog sponzora.
 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\muzej
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\muzej.sql
 
 drop database if exists muzej;
 create database muzej;

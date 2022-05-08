@@ -4,7 +4,7 @@
 # Jedan posao u isto vrijeme može obavljati više svećenika. 
 # Svaki svećenik ima samo jednog nadređenog svećenika.
 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\samostan
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\samostan.sql
 
 
 drop database if exists samostan;

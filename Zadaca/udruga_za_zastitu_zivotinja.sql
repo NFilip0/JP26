@@ -4,7 +4,7 @@
 # Štićenici udruge su životinje. 
 # Svaki štićenik se nalazi u jednom prostoru.
 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\udruga_za_zastitu_zivotinja
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Zadaca\udruga_za_zastitu_zivotinja.sql
 
 drop database if exists udruga_za_zastitu_zivotinja;
 create database udruga_za_zastitu_zivotinja;
