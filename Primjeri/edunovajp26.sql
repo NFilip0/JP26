@@ -1,6 +1,6 @@
 # hash je komentar
 # sljedecu liniju bez pocetnog hash znaka izvesti u cmd
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\filip\Documents\jp26\Primjeri\edunovajp26.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\filip\Documents\jp26\Primjeri\edunovajp26.sql
 
 drop database if exists edunovajp26;
 create database edunovajp26;
@@ -61,3 +61,10 @@ alter table clan add foreign key (polaznik) references polaznik(sifra);
 alter table polaznik add foreign key (osoba) references osoba(sifra);
 
 alter table predavac add foreign key (osoba) references osoba(sifra);
+
+# unos podataka
+insert into smjer (naziv,cijena,upisnina)
+values ('Java programiranje ČŠĆĐŽ čšćđž',5999.99,500);
+
+insert into grupa (naziv,smjer)
+values ('JP26',1);
