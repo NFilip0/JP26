@@ -11,30 +11,28 @@ create database salon_za_uljepsavanje;
 use salon_za_uljepsavanje;
 
 create table djelatnica(
-    sifra varchar(50),
-    osoba varchar(50) ,
-    ime varchar(50),
-    prezime varchar(50),
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
     iban varchar(50)
 );
 
-create table osoba(
-    sifra varchar(50),
-    ime varchar(50),
-    prezime varchar(50),
-    oib varchar(11)
+create table korisnik(
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
+    oib char(11)
 );
 
 create table usluga(
-    sifra varchar(50),
-    naziv varchar(50),
-    cijena varchar(50)
+    sifra int not null primary key auto_increment,
+    naziv varchar(50) not null,
+    cijena decimal(18,2)
 );
 
 create table posjeta(
-    sifra varchar(50),
-    korisnik varchar(50),
-    djelatnica varchar(50),
-    usluga varchar(50)
+    sifra int not null primary key auto_increment,
+    korisnik int not null,
+    djelatnica int not null,
+    usluga int not null
 );
-
