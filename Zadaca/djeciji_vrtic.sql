@@ -37,3 +37,10 @@ create table strucna_sprema(
     sifra int not null primary key auto_increment,
     naziv varchar(50) not null
 );
+
+alter table skupina add foreign key (odgajateljica) references odgajateljica(sifra);
+
+alter table dijete add foreign key (skupina) references skupina(sifra);
+
+alter table odgajateljica add foreign key (strucna_sprema) references strucna_sprema(sifra);
+
