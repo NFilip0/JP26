@@ -36,3 +36,7 @@ create table posjeta(
     djelatnica int not null,
     usluga int not null
 );
+
+alter table posjeta add foreign key (korisnik) references korisnik(sifra);
+alter table posjeta add foreign key (djelatnica) references djelatnica(sifra);
+alter table posjeta add foreign key (usluga) references usluga(sifra);
