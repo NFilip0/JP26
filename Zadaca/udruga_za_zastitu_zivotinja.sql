@@ -38,3 +38,9 @@ create table zivotinja(
     vrsta varchar(50) not null,
     prostor int not null
 );
+
+alter table sticenik add foreign key (osoba) references osoba(sifra);
+alter table sticenik add foreign key (prostor) references prostor(sifra);
+alter table sticenik add foreign key (zivotinja) references zivotinja(sifra);
+
+alter table zivotinja add foreign key (prostor) references prostor(sifra);
