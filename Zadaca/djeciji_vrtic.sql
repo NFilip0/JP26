@@ -12,28 +12,28 @@ create database djeciji_vrtic;
 use djeciji_vrtic;
 
 create table skupina(
-    sifra varchar(50),
-    naziv varchar(50),
-    broj_djece varchar(50),
-    odgajateljica varchar(50)
+    sifra int not null primary key auto_increment,
+    naziv varchar(50) not null,
+    broj_djece int,
+    odgajateljica int not null
 );
 
 create table dijete(
-    sifra varchar(50),
-    ime varchar(50),
-    prezime varchar(50),
-    skupina varchar(50)
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50)not null,
+    skupina int not null
 );
 
 create table odgajateljica(
-    sifra varchar(50),
-    ime varchar(50),
-    prezime varchar(50),
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
     iban varchar(50),
-    strucna_sprema varchar(50)
+    strucna_sprema int not null
 );
 
 create table strucna_sprema(
-    sifra varchar(50),
-    naziv varchar(50)
+    sifra int not null primary key auto_increment,
+    naziv varchar(50) not null
 );
