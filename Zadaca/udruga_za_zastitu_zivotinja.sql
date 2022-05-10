@@ -12,22 +12,29 @@ create database udruga_za_zastitu_zivotinja;
 use udruga_za_zastitu_zivotinja;
 
 create table osoba(
-    sifra varchar(50),
-    ime varchar(50),
-    prezime varchar(50),
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
     iban varchar(50),
-    oib varchar(11)
+    oib char(11)
+);
+
+create table sticenik(
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    zivotinja int not null,
+    osoba int not null,
+    prostor int not null
 );
 
 create table prostor(
-    sifra varchar(50),
-    naziv varchar(50)
+    sifra int not null primary key auto_increment,
+    naziv varchar(50) not null
 );
 
 create table zivotinja(
-    sifra varchar(50),
-    ime varchar(50),
-    vrsta varchar(50),
-    prostor varchar(50),
-    osoba varchar(50)
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    vrsta varchar(50) not null,
+    prostor int not null
 );
