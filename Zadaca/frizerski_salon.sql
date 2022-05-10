@@ -11,13 +11,12 @@ use frizerski_salon;
 
 create table djelatnica(
     sifra int not null primary key auto_increment,
-    osoba int not null,
     ime varchar(50) not null,
     prezime varchar(50) not null,
     iban varchar(50)
 );
 
-create table osoba(
+create table korisnik(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
     prezime varchar(50) not null,
@@ -36,3 +35,7 @@ create table posjeta(
     djelatnica int not null,
     usluga int not null
 );
+
+alter table posjeta add foreign key (korisnik) references korisnik(sifra);
+alter table posjeta add foreign key (djelatnica) references djelatnica(sifra);
+alter table posjeta add foreign key (usluga) references usluga(sifra);
