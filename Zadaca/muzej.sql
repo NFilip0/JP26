@@ -13,36 +13,42 @@ create database muzej;
 use muzej;
 
 create table izlozba(
-    sifra varchar(50),
-    broj_djela varchar(50),
-    kustos varchar(50),
-    sponzor varchar(50)
+    sifra int not null primary key auto_increment,
+    broj_djela int,
+    kustos int not null,
+    sponzor int not null
 );
 
 create table djelo(
-    sifra varchar(50),
-    naziv varchar(50),
-    cijena varchar(50),
-    datum_izrade varchar(50),
-    autor varchar(50),
-    izlozba varchar(50)
+    sifra int not null primary key auto_increment,
+    naziv varchar(50) not null,
+    cijena decimal(18,2),
+    datum_izrade datetime,
+    autor int not null,
+    izlozba int not null
 );
 
 create table autor(
-    sifra varchar(50),
-    ime varchar(50),
-    prezime varchar(50)
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null
 );
 
 create table kustos(
-    sifra varchar(50),
-    ime varchar(50),
-    prezime varchar(50),
-    oib varchar(50)
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null,
+    oib char(11)
 );
 
 create table sponzor(
-    sifra varchar(50),
-    naziv varchar(50),
+    sifra int not null primary key auto_increment,
+    naziv varchar(50) not null,
     brojugovora varchar(50)
 );
+
+alter table izlozba add foreign key (kustos) references kustos(sifra);
+alter table izlozba add foreign key (sponzor) references sponzor(sifra);
+
+alter table djelo add foreign key (autor) references autor(sifra);
+alter table djelo add foreign key (izlozba) references izlozba(sifra);
