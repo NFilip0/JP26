@@ -12,41 +12,54 @@ create database postolar;
 use postolar;
 
 create table korisnik(
-    sifra varchar(50),
+    sifra int not null primary key auto_increment,
     ime varchar(50),
     prezime varchar(50),
-    broj_mobitela varchar(50)
+    broj_mobitela int
 );
 create table postolar(
-    sifra varchar(50),
-    korisnik varchar(50),
-    segrt varchar(50),
+    sifra int not null primary key auto_increment,
+    korisnik int not null,
+    segrt int not null,
     iban varchar(50)
 );
 
 create table segrt(
-    sifra varchar(50),
-    korisnik varchar(50),
+    sifra int not null primary key auto_increment,
+    korisnik int not null,
     iban varchar(50)
 );
 
 create table obuca(
-    sifra varchar(50),
-    naziv varchar(50),
-    boja varchar(50),
-    vlasnik varchar(50)
+    sifra int not null primary key auto_increment,
+    naziv varchar(50) not null,
+    boja varchar(50) not null,
+    vlasnik int not null
 );
 
 create table popravak(
-    sifra varchar(50),
-    postolar varchar(50),
-    segrt varchar(50),
-    trajanje varchar(50), 
-    cijena varchar(50)
+    sifra int not null primary key auto_increment,
+    postolar int not null,
+    segrt int,
+    trajanje varchar(50) not null, 
+    cijena decimal(18,2)
 );
 
 create table popravak_obuca(
-    sifra varchar(50),
-    popravak varchar(50),
-    obuca varchar(50)
+    sifra int not null primary key auto_increment,
+    popravak int not null,
+    obuca int not null
 );
+
+alter table postolar add foreign key (korisnik) references korisnik(sifra);
+alter table postolar add foreign key (segrt) references segrt(sifra);
+
+alter table segrt add foreign key (korisnik) references korisnik(sifra);
+
+alter table obuca add foreign key (vlasnik) references korisnik(sifra);
+
+alter table popravak add foreign key (postolar) references postolar(sifra);
+alter table popravak add foreign key (segrt) references segrt(sifra);
+
+alter table popravak_obuca add foreign key (popravak) references popravak(sifra);
+alter table popravak_obuca add foreign key (obuca) references obuca(sifra);
