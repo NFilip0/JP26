@@ -10,7 +10,7 @@ create table zaposlenik(
     ime varchar(50) not null,
     prezime varchar(50) not null,
     placa decimal(18,2) not null,
-    nadređeni int not null
+    nadredeni int not null
 );
 
-alter table zaposlenik add foreign key (nadređeni) references zaposlenik(sifra);
+alter table zaposlenik add foreign key (nadredeni) references zaposlenik(sifra);
