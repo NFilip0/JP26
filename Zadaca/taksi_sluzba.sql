@@ -12,37 +12,44 @@ create database taksi_sluzba;
 use taksi_sluzba;
 
 create table vozilo(
-    broj_vozila varchar(50),
-	reg_tablica varchar(50),
-   	vrsta varchar(50), 
-	vozac varchar(50)
+    broj_vozila int primary key not null,
+	reg_tablica int not null,
+   	vrsta varchar(50) not null, 
+	vozac int
 );
 
 create table vozac(
-	sifra varchar(50),
-	ime varchar(50),
-	prezime varchar(50),
-    iban varchar(50),
-	vozacka varchar(50)
+	sifra int primary key not null auto_increment,
+	ime varchar(50) not null,
+	prezime varchar(50) not null,
+    iban varchar(50) not null,
+	vozacka char(8) not null
 );
 
 create table voznja(
-	sifra varchar(50),
-   	trajanje varchar(50),
-	polaziste varchar(50),
-	odrediste varchar(50),
-    cijena varchar(50),
-	vozilo varchar(50)
+	sifra int primary key not null auto_increment,
+   	trajanje varchar(50) not null,
+	polaziste varchar(50) not null,
+	odrediste varchar(50) not null,
+    cijena decimal(18,2),
+	vozilo int not null
 );
 
 create table putnik(
-	sifra varchar(50),
-	ime varchar(50),
-	broj_telefona varchar(50)
+	sifra int primary key not null auto_increment,
+	ime varchar(50) not null,
+	broj_telefona int not null
 );
 
 create table voznja_putnik(
-	sifra varchar(50),
-	putnik varchar(50),
-	voznja varchar(50)
+	sifra int primary key not null auto_increment,
+	putnik int not null,
+	voznja int not null
 );
+
+alter table vozilo add foreign key (vozac) references vozac(sifra);
+
+alter table voznja add foreign key (vozilo) references vozilo(broj_vozila);
+
+alter table voznja_putnik add foreign key (putnik) references putnik(sifra);
+alter table voznja_putnik add foreign key (voznja) references voznja(sifra);
