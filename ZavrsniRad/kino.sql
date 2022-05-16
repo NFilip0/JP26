@@ -14,10 +14,7 @@ create table prodavac(
 create table kupac(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
-    prezime varchar(50) not null,
-    smjer int not null,
-    datumpocetka datetime,
-    brojpolaznika int not null
+    prezime varchar(50) not null
 );
 
 create table dvorana(
