@@ -37,56 +37,37 @@ alter table mjesto add foreign key (opcina) references opcina(sifra);
 
 select * from zupan;
 insert into zupan(ime, prezime)
-values ('Stevo','Stević');
-insert into zupan(ime, prezime)
-values ('Pero','Perić');
-insert into zupan(ime, prezime)
-values ('Robert','Bašulj');
+values ('Stevo','Stević'),
+('Pero','Perić'),
+('Robert','Bašulj');
 
 select * from zupanija;
 insert into zupanija (naziv, zupan)
-values (' Osječko-baranjska',1);
-insert into zupanija (naziv, zupan)
-values ('Brodsko-posavska',2);
-insert into zupanija (naziv, zupan)
-values ('Vukovarsko-srijemska',3);
+values (' Osječko-baranjska',1),
+('Brodsko-posavska',2),
+('Vukovarsko-srijemska',3);
+
 
 select * from opcina;
 insert into opcina (naziv,zupanija)
-values ('Bilje',1);
-insert into opcina (naziv,zupanija)
-values ('Bukovlje',2);
-insert into opcina (naziv,zupanija)
-values ('Borovo',3);
-insert into opcina (naziv,zupanija)
-values ('Čepin',1);
-insert into opcina (naziv,zupanija)
-values ('Garčin',2);
-insert into opcina (naziv,zupanija)
-values ('Cerna',3);
+values ('Bilje',1),
+('Bukovlje',2),
+('Borovo',3),
+('Čepin',2),
+('Garčin',2),
+('Cerna',2);
 
 select * from mjesto;
 insert into mjesto(naziv,opcina)
-values ('mjesto1',1);
-insert into mjesto(naziv,opcina)
-values ('mjesto2',2);
-insert into mjesto(naziv,opcina)
-values ('mjesto3',3);
-insert into mjesto(naziv,opcina)
-values ('mjesto4',4);
-insert into mjesto(naziv,opcina)
-values ('mjesto5',5);
-insert into mjesto(naziv,opcina)
-values ('mjesto2',6);
-insert into mjesto(naziv,opcina)
-values ('mjesto3',1);
-insert into mjesto(naziv,opcina)
-values ('mjesto4',2);
-insert into mjesto(naziv,opcina)
-values ('mjesto5',3);
-insert into mjesto(naziv,opcina)
-values ('mjesto6',4);
-insert into mjesto(naziv,opcina)
-values ('mjesto2',5);
-insert into mjesto(naziv,opcina)
-values ('mjesto1',6);
+values ('mjesto1',1),
+('mjesto2',2),
+('mjesto3',3),
+('mjesto4',4),
+('mjesto5',5),
+('mjesto2',6),
+('mjesto3',1),
+('mjesto4',2),
+('mjesto5',3),
+('mjesto6',4),
+('mjesto2',5),
+('mjesto1',6);
