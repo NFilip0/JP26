@@ -8,8 +8,7 @@ create table prodavac(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
     prezime varchar(50) not null,
-    iban varchar(50),
-    karta int not null
+    iban varchar(50)
 );
 
 create table kupac(
@@ -19,6 +18,11 @@ create table kupac(
     smjer int not null,
     datumpocetka datetime,
     brojpolaznika int not null
+);
+
+create table dvorana(
+    sifra int not null primary key auto_increment,
+    naziv varchar(20) not null
 );
 
 create table film(
@@ -35,11 +39,13 @@ create table karta(
     datumpocetka datetime not null,
     datumzavrsetka datetime,
     cijena decimal(16,8) not null,
-    film int not null
+    film int not null,
+    kupac int not null,
+    prodavac int not null
 );
 
-alter table prodavac add foreign key  (karta) references karta(sifra);
+alter table karta add foreign key (prodavac) references prodavac(sifra);
 
+alter table karta add foreign key (dvorana) references dvorana(sifra);
 alter table karta add foreign key (film) references film(sifra);
-
-alter table film add foreign key (kupac) references kupac(sifra);
+alter table karta add foreign key (kupac) references kupac(sifra);
