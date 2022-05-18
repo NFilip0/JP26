@@ -1,11 +1,11 @@
 # hash je komentar
 # sljedecu liniju bez pocetnog hash znaka izvesti u cmd
-# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\filip\Documents\jp26\Primjeri\edunovajp26.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\filip\Documents\jp26\Vjezbe\vjezba2.sql
 
-drop database if exists edunovajp26;
-create database edunovajp26;
+drop database if exists vjezba2;
+create database vjezba2;
 
-use edunovajp26;
+use vjezba2;
 
 create table smjer(
     sifra int not null primary key auto_increment,
@@ -151,3 +151,48 @@ where sifra=2;
 update grupa set predavac=1 where sifra=1;
 
 delete from smjer where sifra=3;
+
+# unesite sebe kao predavača
+ select * from osoba;
+
+select * from predavac;
+
+insert into predavac (sifra,osoba,iban)
+values (null,9,null);
+
+select * from smjer;
+insert into smjer (sifra,naziv,trajanje,cijena,upisnina,certificiran)
+values (null,'Tehničar za mrežu',50,1500,300,null);
+
+# sebi kao predavaču promjeniti iban
+
+update predavac set iban='HR312312412412414' where sifra=3;
+
+# unijeti svoju užu rodbinu za polaznike
+
+insert into osoba (sifra,prezime,ime,oib,email) values
+(null,'Nađ','Dario',null,'dario.nadj@gmail.com'),
+(null,'Nađ','Mirjana',null,'mirjana.nadj@gmail.com'),
+(null,'Anić','Sanja',null,'sanja.anić@gmail.com'),
+(null,'Anić','Dunja',null,'dunja.anić@gmail.com'),
+(null,'Nađ','Luka',null,'nađ.luka@gmail.com'),
+(null,'Nađ','Antonela',null,'nađ.antonela@gmail.com');
+
+select * from osoba;
+
+insert into polaznik (sifra,osoba,brojugovora) values
+(null,15,null),(null,16,null),
+(null,17,null),(null,18,null),
+(null,19,null),(null,20,null);
+
+select * from polaznik;
+
+insert into clan(grupa,polaznik) values
+(1,13),(1,14),(1,15),
+(2,16),(2,17),(2,18);
+
+select * from clan;
+
+update smjer set cijena=cijena*1.10;
+
+select * from smjer;
