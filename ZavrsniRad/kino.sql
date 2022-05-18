@@ -26,8 +26,7 @@ create table film(
     sifra int not null primary key auto_increment,
     naziv varchar(20) not null,
     zanr varchar(20) not null,
-    glumci varchar(50) not null,
-    kupac int not null
+    glumci varchar(50) not null
 );
 
 create table karta(
