@@ -68,3 +68,40 @@ values ('Dvorana 1'),
 ('Dvorana 3'),
 ('Dvorana 4'),
 ('Dvorana 5');
+
+select * from kupac;
+insert into kupac (ime,prezime)
+values ('Marija', 'Knežević'),
+('Ivan', 'Horvat'),
+('Ana', 'Babić'),
+('Ivica', 'Marković'),
+('Tomislav', 'Bošnjak');
+
+select * from glumac;
+insert into glumac (ime,prezime)
+values ('Ime1','Prezime1'),
+('Ime2','Prezime2'),
+('Ime3','Prezime3'),
+('Ime4','Prezime4'),
+('Ime5','Prezime5'),
+('Ime6','Prezime6'),
+('Ime7','Prezime7'),
+('Ime8','Prezime8'),
+('Ime9','Prezime9'),
+('Ime10','Prezime10');
+
+select * from film;
+insert into film(naziv,zanr,glumac)
+values ('Naziv1','horror',1),
+('Naziv2','akcija',2),
+('Naziv3','komedija',3),
+('Naziv4','ljubavni',4),
+('Naziv5','triler',5);
+
+select * from karta;
+insert into karta(dvorana,datumpocetka,datumzavrsetka,cijena,film,kupac,prodavac)
+values (1,'2022-05-21 19:00',null,64.99,1,1,1),
+(2,'2022-05-21 20:00',null,64.99,2,3,2),
+(4,'2022-05-21 21:00',null,74.99,3,2,3),
+(1,'2022-05-21 22:00',null,64.99,4,5,5),
+(5,'2022-05-21 19:00',null,74.99,5,4,4);
