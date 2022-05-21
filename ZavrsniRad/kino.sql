@@ -53,3 +53,11 @@ values ('Stevo','Stević'),
 ('Robert','Pavlović'),
 ('Mirjana','Božić'),
 ('Stjepan','Lovrić');
+
+select * from dvorana;
+insert into dvorana (naziv)
+values ('Dvorana 1'),
+('Dvorana 2'),
+('Dvorana 3'),
+('Dvorana 4'),
+('Dvorana 5');
