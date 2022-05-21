@@ -45,3 +45,11 @@ alter table karta add foreign key (prodavac) references prodavac(sifra);
 alter table karta add foreign key (dvorana) references dvorana(sifra);
 alter table karta add foreign key (film) references film(sifra);
 alter table karta add foreign key (kupac) references kupac(sifra);
+
+select * from prodavac;
+insert into prodavac(ime, prezime)
+values ('Stevo','Stević'),
+('Pero','Perić'),
+('Robert','Pavlović'),
+('Mirjana','Božić'),
+('Stjepan','Lovrić');
