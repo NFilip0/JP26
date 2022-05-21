@@ -26,7 +26,13 @@ create table film(
     sifra int not null primary key auto_increment,
     naziv varchar(20) not null,
     zanr varchar(20) not null,
-    glumci varchar(50) not null
+    glumac int not null
+);
+
+create table glumac(
+    sifra int not null primary key auto_increment,
+    ime varchar(50) not null,
+    prezime varchar(50) not null
 );
 
 create table karta(
@@ -40,8 +46,9 @@ create table karta(
     prodavac int not null
 );
 
-alter table karta add foreign key (prodavac) references prodavac(sifra);
+alter table film add foreign key (glumac) references glumac(sifra);
 
+alter table karta add foreign key (prodavac) references prodavac(sifra);
 alter table karta add foreign key (dvorana) references dvorana(sifra);
 alter table karta add foreign key (film) references film(sifra);
 alter table karta add foreign key (kupac) references kupac(sifra);
