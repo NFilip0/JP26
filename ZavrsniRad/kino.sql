@@ -8,7 +8,7 @@ create table prodavac(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
     prezime varchar(50) not null,
-    iban varchar(50)
+    iban varchar(50) not null
 );
 
 create table kupac(
@@ -54,12 +54,12 @@ alter table karta add foreign key (film) references film(sifra);
 alter table karta add foreign key (kupac) references kupac(sifra);
 
 select * from prodavac;
-insert into prodavac(ime, prezime)
-values ('Stevo','Stević'),
-('Pero','Perić'),
-('Robert','Pavlović'),
-('Mirjana','Božić'),
-('Stjepan','Lovrić');
+insert into prodavac(ime, prezime, iban)
+values ('Stevo','Stević','HR6025000098263725897'),
+('Pero','Perić','HR6024020066558369253'),
+('Robert','Pavlović','HR3724840086298759382'),
+('Mirjana','Božić','HR3525000098634119877'),
+('Stjepan','Lovrić','HR1123600003633654122');
 
 select * from dvorana;
 insert into dvorana (naziv)
@@ -79,24 +79,24 @@ values ('Marija', 'Knežević'),
 
 select * from glumac;
 insert into glumac (ime,prezime)
-values ('Ime1','Prezime1'),
-('Ime2','Prezime2'),
-('Ime3','Prezime3'),
-('Ime4','Prezime4'),
-('Ime5','Prezime5'),
-('Ime6','Prezime6'),
-('Ime7','Prezime7'),
-('Ime8','Prezime8'),
-('Ime9','Prezime9'),
-('Ime10','Prezime10');
+values ('Ward','Horton'),
+('Bob','Odenkirk'),
+('Ryan','Reynolds'),
+('Emma','Pasarow'),
+('Marco','D''Amore'),
+('Maya','Sansa'),
+('Belmont','Cameli'),
+('Walker','Scobell'),
+('Aleksey','Serebryakov'),
+('Annabelle','Wallis');
 
 select * from film;
 insert into film(naziv,zanr,glumac)
-values ('Naziv1','horror',1),
-('Naziv2','akcija',2),
-('Naziv3','komedija',3),
-('Naziv4','ljubavni',4),
-('Naziv5','triler',5);
+values ('Annabelle','horror,triler',1),
+('Nobody','akcija',2),
+('The adam project','komedija,akcija',3),
+('Along for the Ride','ljubavni,drama',4),
+('Security','triler',5);
 
 select * from karta;
 insert into karta(dvorana,datumpocetka,datumzavrsetka,cijena,film,kupac,prodavac)
