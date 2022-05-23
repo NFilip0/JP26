@@ -26,14 +26,9 @@ create table film(
     sifra int not null primary key auto_increment,
     naziv varchar(20) not null,
     zanr varchar(20) not null,
-    glumac int not null
+    glumci varchar(100) not null
 );
 
-create table glumac(
-    sifra int not null primary key auto_increment,
-    ime varchar(50) not null,
-    prezime varchar(50) not null
-);
 
 create table karta(
     sifra int not null primary key auto_increment,
@@ -45,8 +40,6 @@ create table karta(
     kupac int not null,
     prodavac int not null
 );
-
-alter table film add foreign key (glumac) references glumac(sifra);
 
 alter table karta add foreign key (prodavac) references prodavac(sifra);
 alter table karta add foreign key (dvorana) references dvorana(sifra);
@@ -77,26 +70,13 @@ values ('Marija', 'Knežević'),
 ('Ivica', 'Marković'),
 ('Tomislav', 'Bošnjak');
 
-select * from glumac;
-insert into glumac (ime,prezime)
-values ('Ward','Horton'),
-('Bob','Odenkirk'),
-('Ryan','Reynolds'),
-('Emma','Pasarow'),
-('Marco','D''Amore'),
-('Maya','Sansa'),
-('Belmont','Cameli'),
-('Walker','Scobell'),
-('Aleksey','Serebryakov'),
-('Annabelle','Wallis');
-
 select * from film;
-insert into film(naziv,zanr,glumac)
-values ('Annabelle','horror,triler',1),
-('Nobody','akcija',2),
-('The adam project','komedija,akcija',3),
-('Along for the Ride','ljubavni,drama',4),
-('Security','triler',5);
+insert into film(naziv,zanr,glumci)
+values ('Annabelle','horror,triler','Ward Horton,Annabelle Wallis'),
+('Nobody','akcija','Bob Odenkirk,Aleksey Serebryakov'),
+('The adam project','komedija,akcija','Ryan Reynolds,Walker Scobell'),
+('Along for the Ride','ljubavni,drama','Emma Pasarow,Belmont Cameli'),
+('Security','triler','Marco Amore, Maya Sansa');
 
 select * from karta;
 insert into karta(dvorana,datumpocetka,datumzavrsetka,cijena,film,kupac,prodavac)
