@@ -115,3 +115,11 @@ insert into sestra_svekar (sestra,svekar) values
 (1,3),
 (2,1),
 (3,2);
+
+# 2. U tablici cura postavite svim zapisima kolonu gustoca na vrijednost 15,77.
+select * from cura;
+insert into cura (novcica,gustoca,ogrlica)
+values (20,20,1),
+(30,30,2),
+(40,40,3);
+update cura set gustoca=15.77;
