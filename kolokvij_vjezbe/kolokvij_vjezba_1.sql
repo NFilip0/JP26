@@ -123,3 +123,9 @@ values (20,20,1),
 (30,30,2),
 (40,40,3);
 update cura set gustoca=15.77;
+
+# 3. U tablici mladic obrišite sve zapise čija je vrijednost kolone kuna veće od 15,78.
+delete from mladic where kuna > 15.78;
+
+# 4. Izlistajte kratkamajica iz tablice zena uz uvjet da vrijednost kolone hlace sadrže slova ana.
+select kratkamajica from zena where hlace like '%ana%';
