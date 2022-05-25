@@ -124,7 +124,7 @@ insert into svekar (stilfrizura,ogrlica,asocijalno) values
     (null,2,0),
     (null,3,1);
 
-# 3. U tablici prijatelj postavite svim zapisima kolonu
+# 2. U tablici prijatelj postavite svim zapisima kolonu
 # treciputa na vrijednost 30.travnja 2020.
 insert into prijatelj (modelnaocala,treciputa,ekstroventno,prviputa,svekar) values
 	(null,'2022-05-24',1,null,1),
@@ -132,3 +132,12 @@ insert into prijatelj (modelnaocala,treciputa,ekstroventno,prviputa,svekar) valu
     (null,'2022-05-24',1,null,1);
 select * from prijatelj;
 update prijatelj set treciputa = '2020-04-30';
+
+# 3. U tablici brat obrišite sve zasapise čija
+# je vrijednost kolone ogrilica različito od 14.
+insert into brat (suknja,ogrlica,asocijalno,neprijatelj) values
+	(null,14,1,1),
+    (null,13,0,2),
+    (null,15,1,3);
+
+delete from brat where ogrlica != 14;
