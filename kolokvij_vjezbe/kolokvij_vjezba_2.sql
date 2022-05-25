@@ -4,6 +4,7 @@ create database kolokvij_vjezba_2;
 
 use kolokvij_vjezba_2;
 
+# 0. Kreirajte tablice i veze između tablica.
 
 create table zarucnica(
 	sifra int not null primary key auto_increment,
@@ -84,3 +85,50 @@ alter table decko_zarucnica add foreign key (decko) references decko (sifra);
 alter table decko_zarucnica add foreign key (zarucnica) references zarucnica (sifra);
 
 alter table prijatelj add foreign key (svekar) references svekar (sifra);
+
+# 1. U tablice neprijatelj,cura i decko_zarucnica unesite po 3 retka.
+
+select * from neprijatelj;
+insert into neprijatelj (majica,haljina,lipa,modelnaocala,kuna,jmbag,cura) values
+	(null,'haljina1',null,'modelnaocala1',100,null,null),
+	(null,'haljina2',null,'modelnaocala2',200,null,null),
+	(null,'haljina3',null,'modelnaocala3',300,null,null);
+	
+select * from cura;
+insert into cura (haljina,drugiputa,suknja,narukvica,introvertno,majica,decko) values
+	('haljina1','2022-05-22',null,null,null,'majica1',null),
+	('haljina2','2022-05-23',null,null,null,'majica2',null),
+	('haljina3','2022-05-24',null,null,null,'majica3',null);
+
+select * from decko;
+insert into decko (indiferentno,vesta,asocijalno) values
+	(null,null,1),
+	(null,null,0),
+	(null,null,1);
+
+select * from zarucnica;
+insert into zarucnica (narukvica,bojakose,novcica,lipa,indiferentno) values
+	(null,'bojakose1',null,50,1),
+	(null,'bojakose2',null,55,0),
+	(null,'bojakose3',null,555,1);
+
+select * from decko_zarucnica;
+insert into decko_zarucnica (decko,zarucnica) values
+	(1,1),
+	(2,2),
+	(3,3);
+
+select * from svekar;
+insert into svekar (stilfrizura,ogrlica,asocijalno) values
+	(null,1,1),
+    (null,2,0),
+    (null,3,1);
+
+# 3. U tablici prijatelj postavite svim zapisima kolonu
+# treciputa na vrijednost 30.travnja 2020.
+insert into prijatelj (modelnaocala,treciputa,ekstroventno,prviputa,svekar) values
+	(null,'2022-05-24',1,null,1),
+    (null,'2022-05-25',1,null,1),
+    (null,'2022-05-24',1,null,1);
+select * from prijatelj;
+update prijatelj set treciputa = '2020-04-30';
