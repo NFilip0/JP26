@@ -91,25 +91,25 @@ alter table zena add foreign key (sestra) references sestra(sifra);
 alter table cura add foreign key (punac) references punac(sifra);
 
 # 1. U tablice muskarac,zena i sestra_svekar unesite po 3 retka
-insert into sestra (haljina,hlace,narukvica) values
-('haljina1','hlace1',10),
-('haljina2','hlace2',11),
-('haljina3','hlace3',12);
+insert into sestra (introvertno,haljina,maraka,hlace,narukvica) values
+(null,'haljina1',null,'hlace1',10),
+(null,'haljina2',null,'hlace2',11),
+(null,'haljina3',null,'hlace3',12);
 
-insert into zena (kratkamajica,jmbag,bojaociju,sestra) values
-('kratkamajica1','11111111111','bojaociju1',2),
-('kratkamajica2','22222222222','bojaociju2',3),
-('kratkamajica3','33333333333','bojaociju3',1);
+insert into zena (treciputa,hlace,kratkamajica,jmbag,bojaociju,haljina,sestra) values
+(null,'hlace4','kratkamajica1','11111111111','bojaociju1',2),
+(null,'hlace5','kratkamajica2','22222222222','bojaociju2',3),
+(null,'hlace6','kratkamajica3','33333333333','bojaociju3',1);
 
-insert into muskarac (bojaociju,maraka,zena) values
-('bojaociju1',100,1),
-('bojaociju2',200,3),
-('bojaociju3',300,2);
+insert into muskarac (bojaociju, hlace, modelnaocala, maraka, zena) values
+('bojaociju1',null,null,100,1),
+('bojaociju2',null,null,200,3),
+('bojaociju3',null,null,300,2);
 
-insert into svekar (bojaociju) values
-('bojaociju1'),
-('bojaociju2'),
-('bojaociju3');
+insert into svekar (bojaociju,prstena,dukserica,lipa,eura,majica) values
+('bojaociju1',null,null,null,null,null),
+('bojaociju2',null,null,null,null,null),
+('bojaociju3',null,null,null,null,null);
 
 insert into sestra_svekar (sestra,svekar) values
 (1,3),
@@ -125,6 +125,11 @@ values (20,20,1),
 update cura set gustoca=15.77;
 
 # 3. U tablici mladic obrišite sve zapise čija je vrijednost kolone kuna veće od 15,78.
+select * from mladic;
+insert into mladic(suknja,kuna,drugiputa,asocijalno,ekstroventno,dukserica ,muskarac ) values
+	('suknja1',15,null,null,1,'dukserica',1),
+	('suknja2',16,null,null,1,'dukserica2',2),
+	('suknja3',17,null,null,1,'dukserica3',3);
 delete from mladic where kuna > 15.78;
 
 # 4. Izlistajte kratkamajica iz tablice zena uz uvjet da vrijednost kolone hlace sadrže slova ana.
@@ -143,7 +148,8 @@ inner join sestra c on c.sifra=b.sestra
 inner join zena d on d.sestra=c.sifra
 inner join muskarac e on e.zena=d.sifra
 inner join mladic f on f.muskarac=e.sifra
-where d.hlace like 'a%' and c.haljina like '%ba%';
+where d.hlace like 'a%' and c.haljina like '%ba%'
+order by e.hlace desc;
 
 # 6. Prikažite kolone haljina i maraka iz tablice sestra 
 # čiji se primarni ključ ne nalaze u tablici sestra_svekar.
