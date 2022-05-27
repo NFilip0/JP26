@@ -143,7 +143,6 @@ insert into brat (suknja,ogrlica,asocijalno,neprijatelj) values
 delete from brat where ogrlica != 14;
 
 # 4. Izlistajte suknja iz tablice cura uz uvjet da vrijednost kolone drugiputa nepoznate.
-
 select * from cura where drugiputa is null;
 
 # 5. Prikažite novcica iz tablice zarucnica, neprijatelj iz tablice
@@ -161,3 +160,10 @@ inner join neprijatelj e on e.cura =d.sifra
 inner join brat f on f.neprijatelj =e.sifra 
 where d.drugiputa is not null and c.vesta like '%ba%'
 order by e.haljina desc;
+
+# 6. Prikažite kolone vesta i asocijalno iz tablice decko
+# čiji se primarni ključ ne nalaze u tablici decko_zarucnica.
+select a.vesta, a.asocijalno
+from decko a
+left join decko_zarucnica b on b.decko=a.sifra
+where b.sifra is null;
