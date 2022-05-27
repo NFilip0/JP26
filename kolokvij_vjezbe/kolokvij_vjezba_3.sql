@@ -4,6 +4,7 @@ create database kolokvij_vjezba_3;
 
 use kolokvij_vjezba_3;
 
+# 0. Kreirajte tablice i veze između tablica.
 
 create table svekar(
 	sifra int not null primary key auto_increment,
@@ -84,3 +85,47 @@ alter table ostavljena add foreign key (prijatelj) references prijatelj(sifra);
 
 alter table prijatelj_brat add foreign key (prijatelj) references prijatelj(sifra);
 alter table prijatelj_brat add foreign key (brat) references brat(sifra);
+
+# 1. U tablice snasa,ostavljena i prijatelj_brat unesite po 3 retka.
+
+select * from ostavljena;
+insert into ostavljena (kuna,lipa,majica,modelnaocala,prijatelj) values
+	(null,8,'majica1',1,null),
+	(null,9,'majica2',2,null),
+	(null,10,'majica3',3,null);
+
+select * from snasa;
+insert into snasa (introvertno,kuna,eura,treciputa,ostavljena) values
+	(null,10,5,null,1),
+	(null,20,10,null,2),
+	(null,30,15,null,3);
+
+select * from prijatelj;
+insert into prijatelj (indiferentno) values
+	(1),
+	(0),
+	(1);
+
+select * from brat;
+insert into brat (ogrlica,ekstroventno) values
+	(1,1),
+	(2,1),
+	(3,1);
+
+select * from prijatelj_brat;
+insert into prijatelj_brat (prijatelj,brat) values
+	(1,3),
+	(2,2),
+	(3,1);
+
+# 2. U tablici svekar postavite svim zapisima kolonu suknja na vrijednost Osijek.
+select * from svekar;
+insert into cura (dukserica,maraka,drugiputa,majica,novcica,ogrlica) values
+    (null,null,null,null,null,null),
+    (null,null,null,null,null,null),
+    (null,null,null,null,null,null);
+insert into svekar (novcica,suknja,bojakose,prstena,narukvica,cura) values
+    (1,'suknja1',null,null,5,1),
+    (2,'suknja2',null,null,6,2),
+    (3,'suknja3',null,null,7,3);
+update svekar set suknja='Osijek';
