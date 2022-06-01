@@ -143,7 +143,7 @@ delete from punica where kratkamajica ='AB';
 # da vrijednost kolone lipa nije 9,10,20,30 ili 35.
 
 select * from ostavljena;
-select majica from ostavljena where lipa !=9 and lipa !=10 and lipa !=20 and lipa !=30 and lipa !=35;
+select majica from ostavljena where (lipa !=9 and lipa !=10 and lipa !=20 and lipa !=30 and lipa !=35);
 
 # 5. Prikažite ekstroventno iz tablice brat, vesta iz tablice
 # punica te kuna iz tablice snasa uz uvjet da su vrijednosti
