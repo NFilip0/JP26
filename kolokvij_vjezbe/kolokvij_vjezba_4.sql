@@ -80,3 +80,47 @@ alter table becar add foreign key (snasa) references snasa(sifra);
 alter table snasa add foreign key (zena) references zena(sifra);
 alter table zena_mladic add foreign key (mladic) references mladic(sifra);
 alter table zena_mladic add foreign key (zena) references zena(sifra);
+
+# 1. U tablice becar, snasa i zena_mladic unesite po 3 retka.
+
+select * from zena;
+insert into zena (suknja,lipa,prstena) values
+	('suknja1',10,1),
+	('suknja2',20,2),
+	('suknja3',30,3);
+
+select * from mladic;
+insert into mladic (kuna,lipa,nausnica,stilfrizura,vesta) values
+	(null,null,null,null,'vesta1'),
+	(null,null,null,null,'vesta2'),
+	(null,null,null,null,'vesta3');
+
+select * from zena_mladic;
+insert into zena_mladic (zena,mladic) values
+	(1,1),
+	(2,2),
+	(3,3);
+
+select * from snasa;
+insert into snasa (introvertno,treciputa,haljina,zena) values
+	(null,null,'haljina1',1),
+	(null,null,'haljina2',2),
+	(null,null,'haljina3',3);
+	
+select * from becar;
+insert into becar (novcica,kratkamajica,bojaociju ,snasa ) values
+	(null,'kratkamajica1','bojaociju1',1),
+	(null,'kratkamajica2','bojaociju2',2),
+	(null,'kratkamajica3','bojaociju3',3);
+
+# 2. U tablici punac postavite svim zapisima kolonu majica na vrijednost Osijek.
+
+update punac set majica = 'Osijek';
+
+# 3. U tablici prijatelj obrišite sve zapise čija je vrijednost kolone prstena veće od 17.
+
+delete from prijatelj where prstena > 17;
+
+# 4. Izlistajte haljina iz tablice snasa uz uvjet da vrijednost kolone treciputa nepoznate.
+
+select haljina from snasa where treciputa = null;
