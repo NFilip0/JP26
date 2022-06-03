@@ -83,3 +83,34 @@ alter table punac add foreign key (svekar) references svekar(sifra);
 
 alter table svekar_cura add foreign key (svekar) references svekar(sifra);
 alter table svekar_cura add foreign key (cura) references cura(sifra);
+
+# 1. U tablice punica,punac i svekar_cura unesite po 3 retka.
+
+reate table punica(
+	sifra int not null primary key auto_increment,
+	hlace varchar(43) not null,
+    nausnica int not null,
+    ogrlica int,
+    vesta varchar(31) not null,
+    modelnaocala varchar(31) not null,
+    treciputa datetime not null,
+    punac int not null
+);
+
+create table punac(
+	sifra int not null primary key auto_increment,
+	dukserica varchar(33),
+	prviputa datime not null,
+    majica varchar(36),
+    svekar int not null
+);
+
+create table svekar_cura(
+	sifra int not null primary key auto_increment,
+    svekar int not null,
+    cura int not null
+);
+
+# 2. U tablici mladic postavite svim zapisima kolonu haljina na vrijednost Osijek.
+
+update mladic set haljina = 'Osijek';
