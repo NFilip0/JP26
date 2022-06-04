@@ -94,7 +94,7 @@ insert into svekar(bojakose,majica,carape,haljina,narukvica,eura)values
 insert into cura(carape,maraka,asocijalno,vesta)values
 	('carape1',5,null,'vesta1'),
 	('carape2',10,null,'vesta2'),
-	('carape3',15,null,'vesta3'),
+	('carape3',15,null,'vesta3');
 
 insert into punac(dukserica,prviputa,majica,svekar)values
 	(null,'prviputa1','majica1',1),
@@ -127,7 +127,7 @@ select majica from punac where prviputa is null;
 # uz uvjet da su vrijednosti kolone prviputa iz tablice punac poznate te da su vrijednosti kolone majica 
 # iz tablice svekar sadrže niz znakova ba. Podatke posložite po nausnica iz tablice punica silazno.
 
-select 
+select  a.asocijalno ,f.stilfrizura ,e.nausnica 
 from cura a 
 inner join svekar_cura b on b.cura=a.sifra
 inner join svekar c on b.svekar=c.sifra
