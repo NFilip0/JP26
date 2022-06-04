@@ -87,7 +87,7 @@ alter table brat add foreign key (prijatelj) references prijatelj(sifra);
 alter table prijatelj_ostavljena add foreign key (prijatelj) references prijatelj(sifra);
 alter table prijatelj_ostavljena add foreign key (ostavljena) references ostavljena(sifra);
 
-1. U tablice zena,brat i prijatelj_ostavljena unesite po 3 retka.
+# 1. U tablice zena,brat i prijatelj_ostavljena unesite po 3 retka.
 
 select * from brat;
 insert into brat (nausnica,treciputa,narukvica,hlace,prijatelj) values
@@ -97,9 +97,9 @@ insert into brat (nausnica,treciputa,narukvica,hlace,prijatelj) values
 
 select * from zena ;
 insert into zena (novcica,narukvica,dukserica,haljina,hlace,brat) values
-	(100,1,'dukserica1',1,null,null,null),
-	(200,2,'dukserica2',2,null,null,null),
-	(300,3,'dukserica3',3,null,null,null);
+	(100,1,'dukserica1',null,null,2),
+	(200,2,'dukserica2',null,null,3),
+	(300,3,'dukserica3',null,null,1);
 
 insert into prijatelj (haljina,prstena,introvertno,stilfrizura) values
 	(null,1,1,'stilfrizura1'),
@@ -107,9 +107,9 @@ insert into prijatelj (haljina,prstena,introvertno,stilfrizura) values
 	(null,3,1,'stilfrizura3');
 
 insert into ostavljena (prviputa,kratkamajica,drugiputa,maraka) values 
-	('2022-06-02','kratkamajica1','2022-07-02'),
-	('2022-06-04','kratkamajica2','2022-07-04'),
-	('2022-06-03','kratkamajica3','2022-07-03');
+	('2022-06-02','kratkamajica1','2022-07-02',100),
+	('2022-06-04','kratkamajica2','2022-07-04',200),
+	('2022-06-03','kratkamajica3','2022-07-03',300);
 insert into prijatelj_ostavljena (prijatelj,ostavljena) values
 	(1,1),
 	(2,2),
@@ -125,7 +125,7 @@ delete from decko where modelnaocala < 'AB';
 
 # 4. Izlistajte narukvica iz tablice brat uz uvjet da vrijednost kolone treciputa nepoznate.
 
-select narukvica from brate where treciputa is null;
+select narukvica from brat where treciputa is null;
 
 # 5. Prikažite drugiputa iz tablice ostavljena, zena iz tablice decko te narukvica iz tablice zena uz uvjet
 # da su vrijednosti kolone treciputa iz tablice brat poznate te da su vrijednosti kolone prstena iz 
