@@ -86,30 +86,30 @@ alter table svekar_cura add foreign key (cura) references cura(sifra);
 
 # 1. U tablice punica,punac i svekar_cura unesite po 3 retka.
 
-reate table punica(
-	sifra int not null primary key auto_increment,
-	hlace varchar(43) not null,
-    nausnica int not null,
-    ogrlica int,
-    vesta varchar(31) not null,
-    modelnaocala varchar(31) not null,
-    treciputa datetime not null,
-    punac int not null
-);
+insert into svekar(bojakose,majica,carape,haljina,narukvica,eura)values
+	(null,null,'carape1',null,null,10),
+	(null,null,'carape2',null,null,15),
+	(null,null,'carape3',null,null,20);
 
-create table punac(
-	sifra int not null primary key auto_increment,
-	dukserica varchar(33),
-	prviputa datime not null,
-    majica varchar(36),
-    svekar int not null
-);
+insert into cura(carape,maraka,asocijalno,vesta)values
+	('carape1',5,null,'vesta1'),
+	('carape2',10,null,'vesta2'),
+	('carape3',15,null,'vesta3'),
 
-create table svekar_cura(
-	sifra int not null primary key auto_increment,
-    svekar int not null,
-    cura int not null
-);
+insert into punac(dukserica,prviputa,majica,svekar)values
+	(null,'prviputa1','majica1',1),
+	(null,'prviputa2','majica2',2),
+	(null,'prviputa3','majica3',3);
+
+insert into punica(hlace,nausnica,ogrlica,vesta,modelnaocala,treciputa,punac)values
+	('hlace1','nausnica1',null,'vesta1','modelnaocala1','treciputa1',1),
+	('hlace2','nausnica2',null,'vesta2','modelnaocala2','treciputa2',2),
+	('hlace3','nausnica3',null,'vesta3','modelnaocala3','treciputa3',3);
+
+insert into svekar_cura(svekar,cura)values
+	(1,1),
+	(2,2),
+	(3,3);
 
 # 2. U tablici mladic postavite svim zapisima kolonu haljina na vrijednost Osijek.
 
