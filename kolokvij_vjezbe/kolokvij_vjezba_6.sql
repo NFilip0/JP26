@@ -86,3 +86,39 @@ alter table brat add foreign key (prijatelj) references prijatelj(sifra);
 
 alter table prijatelj_ostavljena add foreign key (prijatelj) references prijatelj(sifra);
 alter table prijatelj_ostavljena add foreign key (ostavljena) references ostavljena(sifra);
+
+1. U tablice zena,brat i prijatelj_ostavljena unesite po 3 retka.
+
+select * from brat;
+insert into brat (nausnica,treciputa,narukvica,hlace,prijatelj) values
+	(1,'2022-06-02',1,null,null),
+	(2,'2022-06-04',2,null,null),
+	(3,'2022-06-03',3,null,null);
+
+select * from zena ;
+insert into zena (novcica,narukvica,dukserica,haljina,hlace,brat) values
+	(100,1,'dukserica1',1,null,null,null),
+	(200,2,'dukserica2',2,null,null,null),
+	(300,3,'dukserica3',3,null,null,null);
+
+insert into prijatelj (haljina,prstena,introvertno,stilfrizura) values
+	(null,1,1,'stilfrizura1'),
+	(null,2,0,'stilfrizura2'),
+	(null,3,1,'stilfrizura3');
+
+insert into ostavljena (prviputa,kratkamajica,drugiputa,maraka) values 
+	('2022-06-02','kratkamajica1','2022-07-02'),
+	('2022-06-04','kratkamajica2','2022-07-04'),
+	('2022-06-03','kratkamajica3','2022-07-03');
+insert into prijatelj_ostavljena (prijatelj,ostavljena) values
+	(1,1),
+	(2,2),
+	(3,3);
+
+# 2. U tablici svekrva postavite svim zapisima kolonu suknja na vrijednost Osijek.
+
+update svekrva set suknja = 'Osijek';
+
+# 3. U tablici decko obrišite sve zapise čija je vrijednost kolone modelnaocala manje od AB.
+
+delete from decko where modelnaocala < 'AB';
