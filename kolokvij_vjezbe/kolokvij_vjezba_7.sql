@@ -75,3 +75,15 @@ create table punica(
     prstena int,
     cura int not null
 );
+
+alter table zarucnik_mladic add foreign key (mladic) references mladic(sifra);
+alter table zarucnik_mladic add foreign key (zarucnik) references zarucnik(sifra);
+
+alter table ostavljen add foreign key (zarucnik) references zarucnik(sifra);
+
+alter table prijateljica add foreign key (ostavljen) references ostavljen(sifra);
+
+alter table sestra add foreign key (prijateljica) references prijateljica(sifra);
+
+alter table punica add foreign key (cura) references cura(sifra);
+
