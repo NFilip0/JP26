@@ -87,3 +87,43 @@ alter table sestra add foreign key (prijateljica) references prijateljica(sifra)
 
 alter table punica add foreign key (cura) references cura(sifra);
 
+# 1. U tablice prijateljica, ostavljen i zarucnik_mladic unesite po 3 retka.
+
+insert into prijateljica(sifra,haljina,gustoca,ogrlica,novcica,ostavljen)
+values(null,null,20.10,null,null,null),
+      (null,null,21.20,null,null,null),
+      (null,null,22.30,null,null,null);
+      
+insert into ostavljen(sifra,lipa,introventno,kratkamajica,prstena,zarucnik)
+values(null,null,1,'kratkamajica1',2,null),
+      (null,null,0,'kratkamajica2',3,null),
+      (null,null,1,'kratkamajica3',4,null);
+
+insert into zarucnik(sifra,vesta,asocijalno,modelnaocala,narukvica,novcica)
+values(null,null,1,null,1,10.4),
+      (null,null,0,null,2,10.5),
+      (null,null,1,null,3,10.6);
+      
+insert into mladic(sifra,prstena,lipa,narukvica,drugiputa)
+values(null,null,10.4,1,'2022-06-07'),
+      (null,null,10.5,2,'2022-06-08'),
+      (null,null,10.6,3,'2022-06-09');
+      
+insert into zarucnik_mladic(sifra,zarucnik,mladic)
+values(null,2,2),
+      (null,3,3),
+      (null,1,1);
+
+# 2. U tablici punica postavite svim zapisima kolonu eura na vrijednost 15,77.
+
+insert into cura(sifra,lipa,introventno,modelnaocala,narukvica,treciputa,kuna)
+values(null,30.20,null,null,null,null,null),
+      (null,20.30,null,null,null,null,null),
+      (null,10.15,null,null,null,null,null);
+
+      insert into punica(sifra,majica,eura,prstena,cura)
+values(null,null,15.25,null,1),
+      (null,null,16.25,null,2),
+      (null,null,17.25,null,3);
+
+update punica set eura = 15.77;   
