@@ -156,3 +156,9 @@ inner join prijateljica e on e.ostavljen = d.sifra
 inner join sestra f on f.prijateljica = e.sifra
 where d.introventno is not null and c.asocijalno is not null 
 order by e.gustoca desc ;
+
+# 6. Prikažite kolone asocijalno i modelnaocala iz tablice zarucnik čiji se primarni ključ ne nalaze u tablici zarucnik_mladic.
+select a.asocijalno ,a.modelnaocala 
+from zarucnik a
+left join zarucnik_mladic b on b.zarucnik =a.sifra 
+where b.sifra is null ;
