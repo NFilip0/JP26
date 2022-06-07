@@ -126,4 +126,33 @@ values(null,null,15.25,null,1),
       (null,null,16.25,null,2),
       (null,null,17.25,null,3);
 
-update punica set eura = 15.77;   
+update punica set eura = 15.77;
+
+# 3. U tablici sestra obrišite sve zapise čija je vrijednost kolone hlace manje od AB.
+
+insert into sestra(sifra,bojakose,hlace,lipa,stilfrizura,maraka,prijateljica)
+values(null,'bojakose1','ABB',null,'stilfrizura1',20.10,null),
+      (null,'bojakose2','ABA',null,'stilfrizura2',21.15,null),
+      (null,'bojakose3','AB',null,'stilfrizura3',22.20,null);
+     
+delete from sestra where hlace < 'AB';     
+
+# 4. Izlistajte kratkamajica iz tablice ostavljen uz uvjet da vrijednost kolone introvertno nepoznate.
+
+select kratkamajica from ostavljen where introventno is null;
+
+# 5. Prikažite narukvica iz tablice mladic, stilfrizura iz tablice sestra te 
+# gustoca iz tablice prijateljica uz uvjet da su vrijednosti kolone 
+# introvertno iz tablice ostavljen poznate te da su vrijednosti kolone 
+# asocijalno iz tablice zarucnik poznate. Podatke posložite po gustoca iz 
+# tablice prijateljica silazno.
+
+select a.narukvica ,f.stilfrizura ,e.gustoca 
+from mladic a
+inner join zarucnik_mladic b on b.mladic = a.sifra 
+inner join zarucnik c on b.zarucnik = c.sifra 
+inner join ostavljen d on d.zarucnik = c.sifra 
+inner join prijateljica e on e.ostavljen = d.sifra 
+inner join sestra f on f.prijateljica = e.sifra
+where d.introventno is not null and c.asocijalno is not null 
+order by e.gustoca desc ;
