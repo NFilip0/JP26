@@ -9,14 +9,14 @@ public class Z03 {
 	
 	public static void main(String[] args) {
 		
-		double prviBroj = Double.parseDouble(
+		Integer prviBroj = Integer.parseInt(
 				JOptionPane.showInputDialog("Unesi prvi broj")
 				);
-		double drugiBroj = Double.parseDouble(
+		Integer drugiBroj = Integer.parseInt(
 				JOptionPane.showInputDialog("Unesi drugi broj")
 				);
-		
-		double rez = prviBroj / drugiBroj;
+		float rez;
+		rez = (float) prviBroj / drugiBroj;
 		System.out.println(rez);
 	}
 
