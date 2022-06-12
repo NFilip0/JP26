@@ -9,12 +9,19 @@ public class Z02 {
 	
 	public static void main(String[] args) {
 		
-		int Broj = Integer.parseInt(
-				JOptionPane.showInputDialog("Unesi broj")
+		int i = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi dvoznamenkasti broj")
 				);
-		int rez = Broj % 10;
+		i %= 10;
 		
-		System.out.println(rez);
+		System.out.println(i);
+
+		int j = Integer.parseInt(
+				JOptionPane.showInputDialog("Unesi dvoznamenkasti broj")
+				);
+		j /= 10;
+
+		System.out.println(i);
 		
 	}
 
