@@ -6,11 +6,11 @@ public class Z05 {
 
 	public static void main(String[] args) {
 		
-		// Od tri upisana broja (a, b, c) sa tastature naći najveći.
+		// Od tri upisana broja (x, y, z) sa tastature naći najveći.
 		
-		int x = Integer.parseInt(JOptionPane.showInputDialog("Unesi a"));
-		int y = Integer.parseInt(JOptionPane.showInputDialog("Unesi b"));
-		int z = Integer.parseInt(JOptionPane.showInputDialog("Unesi c"));
+		int x = Integer.parseInt(JOptionPane.showInputDialog("Unesi x"));
+		int y = Integer.parseInt(JOptionPane.showInputDialog("Unesi y"));
+		int z = Integer.parseInt(JOptionPane.showInputDialog("Unesi z"));
 		
 		int max = x;
 		
