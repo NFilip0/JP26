@@ -6,6 +6,8 @@ public class Z07 {
 	
 	public static void main(String[] args) {
 		
+		//  Napiši java program koji pronalazi broj dana u određenom mjesecu i godini.
+		
 		int mjesec = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj mjeseca: "));
 		int godina = Integer.parseInt(JOptionPane.showInputDialog("Unesi godinu: "));
 		int BrojDanaUMjesecu = 0;
