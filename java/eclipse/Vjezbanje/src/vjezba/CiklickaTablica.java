@@ -78,7 +78,6 @@ public class CiklickaTablica {
 			}
 			System.out.println();
 		}
-
 	
 	}
 }
