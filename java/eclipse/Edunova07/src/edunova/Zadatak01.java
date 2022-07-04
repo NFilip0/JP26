@@ -41,7 +41,7 @@ public class Zadatak01 {
 			System.out.println(
 					p.getProfesor().getMjesto().getNaziv()
 					+ " " +
-					p.getProfesor().getIme()+" "+p.getProfesor().getPrezime() + " , " 
+					p.getProfesor().getIme()+" "+ p.getProfesor().getPrezime() + " , " 
 					+ p.getNaziv() + ": " + p.getOcjena());
 		}
 		float prosjek = suma/(float)predmeti.length;
