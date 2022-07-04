@@ -17,7 +17,7 @@ public class Zadatak01 {
 		Mjesto mjesto;
 		for(int i=0; i<predmeti.length;i++) {
 			predmet = new Predmet();
-			predmet.setNaziv(Pomocno.ucitajString("Unesi naziv za " + (i+1 + ". predmet")));
+			predmet.setNaziv(Pomocno.ucitajString("Unesi naziv za " + (i+1) + ". predmet"));
 			
 			// ovo ne raditi- null pointer exception
 			//predmet.getProfesor().setIme("Pero");
@@ -31,7 +31,7 @@ public class Zadatak01 {
 			profesor.setMjesto(mjesto);
 			predmet.setProfesor(profesor);
 			
-			predmet.setOcjena(Pomocno.ucitajInt("Unesi ocjenu za " + (i+1 + ". predmet")));
+			predmet.setOcjena(Pomocno.ucitajInt("Unesi ocjenu za " + (i+1) + ". predmet"));
 			predmeti[i]=predmet;
 		}
 		
@@ -39,8 +39,10 @@ public class Zadatak01 {
 		for(Predmet p: predmeti) {
 			suma+=p.getOcjena();
 			System.out.println(
-					p.getProfesor().getMjesto().getNaziv()+ " " +
-					p.getProfesor().getIme() + " , " + p.getNaziv() + ": " + p.getOcjena());
+					p.getProfesor().getMjesto().getNaziv()
+					+ " " +
+					p.getProfesor().getIme()+" "+p.getProfesor().getPrezime() + " , " 
+					+ p.getNaziv() + ": " + p.getOcjena());
 		}
 		float prosjek = suma/(float)predmeti.length;
 		System.out.println("Prosjek: " + prosjek);
