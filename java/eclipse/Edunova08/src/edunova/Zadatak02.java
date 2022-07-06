@@ -17,17 +17,17 @@ public class Zadatak02 {
 	
 	public static void main(String[] args) {
 		
-		Racunalo r;
-		r = new Racunalo("lenovo","bezicni");
-		System.out.println(r);
+		//Racunalo r;
+		//r = new Racunalo("lenovo","bezicni");
+		//System.out.println(r);
 		//r.setVrstaPrikljucka(Pomocno.ucitajString("Daj nazive : "));
 		
 		
-		/*Televizor t = new Televizor(); // prazan konstrukor
-		t.setProizvodac("Pero");
-		t.setVrstaPrikljucka("Perić");
-		t.setVrstaPrikljucka(Pomocno.ucitajString("Daj nazive : "));
-		*/
+		//Televizor t = new Televizor(); // prazan konstrukor
+		//t.setProizvodac("Pero");
+		//t.setVrstaPrikljucka("Perić");
+		//t.setVrstaPrikljucka(Pomocno.ucitajString("Daj nazive : "));
+		
 		
 	}
 

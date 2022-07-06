@@ -20,13 +20,6 @@ public class Televizor extends Uredaj {
 	public void setVrstaPrikljucka(String vrstaPrikljucka) {
 		this.vrstaPrikljucka = vrstaPrikljucka;
 	}
-	@Override
-	public String toString() {
-		// return ime + " " + prezime; - ovo nije dobro
-		StringBuilder sb = new StringBuilder();
-		sb.append(proizvodac).append(" ").append(prezime);
-		return sb.toString();
-	}
 	
 
 }
