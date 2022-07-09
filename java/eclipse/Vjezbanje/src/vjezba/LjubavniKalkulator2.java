@@ -39,73 +39,51 @@ public class LjubavniKalkulator2 {
 			count = 0;
 			System.out.println();
 			System.out.print("   ");
-			int [] x = new int[h.length()/2];
-			for(int i = 0; i < niz.length /2 ; i++) 
-		    {  
-		        int firstNumber = niz[i];
-		        int secondNumber = niz[niz.length - 1 - i];
-		        int sum = firstNumber + secondNumber;
-		        System.out.print("  " + sum + " ");
-		        int mid = niz[niz.length - 1 - i];
-				if(niz.length % 2 == 0) {
+				
+			
+			int[] x = new int [h.length()/2];
+			if(h.length() % 2 == 0) {
+				for (int i = 0; i < h.length() / 2; i++) {
+					int firstNumber = niz[i];
+					int secondNumber = niz[h.length() - 1 - i];
+					int sum = firstNumber + secondNumber;
+					System.out.print("  " + sum + " ");
 					System.out.print("");
-					}else {
-						System.out.print("");
-					}
-				if (niz.length % 2 != 0) {
-					if ( i == (niz.length/2)-1) {
-						System.out.println("  " + mid);
-					}
+					x[i]=sum;
 				}
-					
-		        x[i] = sum;
-		    }
-			/*int [] y = new int[h.length()/2];
+			} else {
+				for (int i = 0; i < h.length() / 2; i++) {
+					int firstNumber = niz[i];
+					int secondNumber = niz[h.length() - 1 - i];
+					int sum = firstNumber + secondNumber;
+					System.out.print(sum + " ");
+			}
+				int mid = niz[h.length() / 2];
+				System.out.print(mid);
+				System.out.print("");
+			}
+			
 			System.out.println();
-			System.out.print("       ");
-	        for(int i = 0; i < x.length /2 ; i++) 
+			System.out.print("      ");
+			int[] y = new int [h.length()/2];
+			for(int i = 0; i < x.length/2 ; i++) 
 		    {  
 		        int firstNumber = x[i];
 		        int secondNumber = x[x.length - 1 - i];
 		        int sum = firstNumber + secondNumber;
 		        System.out.print("  " + sum + " ");
-				if(x.length % 2 == 0) {
+		        int mid = x[x.length-2-i];
+		        if(x.length % 2 == 0) {
 					System.out.print("");
 					}else {
 						System.out.print("");
 					}
 				if (x.length % 2 != 0) {
 					if ( i == (x.length/2)-1) {
-						int mid = (x.length/2)+1;
 						System.out.println("  " + mid);
-					}
+						}
 				}
-				y[i] = sum;
-		    }	
-	        System.out.println();
-	        System.out.print("       ");
-	        for(int i = 0; i < y.length /2 ; i++) 
-		    {  
-		        int firstNumber = y[i];
-		        int secondNumber = y[y.length - 1 - i];
-		        int sum = firstNumber + secondNumber;
-		        System.out.print("  " + sum + " ");
-				if(y.length % 2 == 0) {
-					System.out.print("");
-					}else {
-						System.out.print("");
-					}
-				if (y.length % 2 != 0) {
-					if ( i == (y.length/2)-1) {
-						int mid = (y.length/2)+1;
-						System.out.println("  " + mid);
-					}
-				}
-
-		    }*/	
-	        
-	        
-	  }
-
+		  }
+	 }
 }
 
