@@ -8,7 +8,7 @@ public class CiklickaTablica {
 		// red -- x
 		// stupac -- y
 		
-		int x = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj reda"));
+		int x = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj redova"));
 		int y = Integer.parseInt(JOptionPane.showInputDialog("Unesi broj stupaca"));
 		
 		int umnozak = x * y;
