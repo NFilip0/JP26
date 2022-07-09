@@ -40,7 +40,6 @@ public class LjubavniKalkulator2 {
 			System.out.println();
 			System.out.print("   ");
 				
-			
 			int[] x = new int [h.length()/2];
 			if(h.length() % 2 == 0) {
 				for (int i = 0; i < h.length() / 2; i++) {
@@ -52,20 +51,20 @@ public class LjubavniKalkulator2 {
 					x[i]=sum;
 				}
 			} else {
-				for (int i = 0; i < h.length() / 2; i++) {
+				for (int i = 0; i < h.length()/2; i++) {
 					int firstNumber = niz[i];
 					int secondNumber = niz[h.length() - 1 - i];
 					int sum = firstNumber + secondNumber;
-					System.out.print(sum + " ");
+					System.out.print("  " + sum + " ");
 			}
 				int mid = niz[h.length() / 2];
-				System.out.print(mid);
+				System.out.print("  " + mid);
 				System.out.print("");
 			}
 			
 			System.out.println();
 			System.out.print("      ");
-			int[] y = new int [h.length()/2];
+			/*int[] y = new int [h.length()/2];
 			for(int i = 0; i < x.length/2 ; i++) 
 		    {  
 		        int firstNumber = x[i];
@@ -83,7 +82,7 @@ public class LjubavniKalkulator2 {
 						System.out.println("  " + mid);
 						}
 				}
-		  }
+		  }*/
 	 }
 }
 
