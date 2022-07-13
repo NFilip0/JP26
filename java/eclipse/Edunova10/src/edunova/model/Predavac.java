@@ -1,8 +1,9 @@
 package edunova.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Predavac extends Osoba {
+public class Predavac extends Osoba implements Serializable{
 	
 	private BigDecimal kotizacija;
 	private BigDecimal rucak;
@@ -46,5 +47,6 @@ public class Predavac extends Osoba {
 		}
 		return kotizacija.add(rucak);
 	}
+	
 
 }
