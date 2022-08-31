@@ -1,0 +1,82 @@
+{
+  "smjerovi": [
+    {
+      "naziv": "Java",
+      "sifra": 1
+    },
+    {
+      "naziv": "PHP",
+      "sifra": 2
+    },
+    {
+      "naziv": "novi promjeni u JSON",
+      "sifra": 6
+    }
+  ],
+  "polaznici": [
+    {
+      "brojUgovora": "",
+      "ime": "Ana",
+      "prezime": "Zimska",
+      "oib": "",
+      "email": "",
+      "sifra": 1
+    },
+    {
+      "brojUgovora": "",
+      "ime": "Marko",
+      "prezime": "Tot",
+      "oib": "",
+      "email": "",
+      "sifra": 2
+    },
+    {
+      "brojUgovora": "",
+      "ime": "Marija",
+      "prezime": "Sven",
+      "oib": "",
+      "email": "",
+      "sifra": 3
+    }
+  ],
+  "predavaci": [
+    {
+      "ime": "Karlo",
+      "prezime": "Čeč",
+      "sifra": 1
+    }
+  ],
+  "grupe": [
+    {
+      "naziv": "JP26",
+      "smjer": {
+        "naziv": "Java",
+        "sifra": 1
+      },
+      "clanovi": [
+        {
+          "polaznik": {
+            "brojUgovora": "",
+            "ime": "Ana",
+            "prezime": "Zimska",
+            "oib": "",
+            "email": "",
+            "sifra": 1
+          },
+          "sifra": 1
+        },
+        {
+          "polaznik": {
+            "brojUgovora": "",
+            "ime": "Marko",
+            "prezime": "Tot",
+            "oib": "",
+            "email": "",
+            "sifra": 2
+          },
+          "sifra": 2
+        }
+      ]
+    }
+  ]
+}

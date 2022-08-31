@@ -1,17 +1,18 @@
 package edunova.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Grupa extends Entitet {
-	
+
 	private String naziv;
 	private Smjer smjer;
 	private Date datumPocetka;
 	private Integer maksimalnoPolaznika;
 	private Predavac predavac;
 	
-	private List<Clan> clanovi;
+	private List<Clan> clanovi = new ArrayList<>();
 	
 	
 	public String getNaziv() {
@@ -50,5 +51,8 @@ public class Grupa extends Entitet {
 	public void setClanovi(List<Clan> clanovi) {
 		this.clanovi = clanovi;
 	}
-
+	
+	
+	
+	
 }

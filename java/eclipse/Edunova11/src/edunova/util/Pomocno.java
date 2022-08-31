@@ -75,5 +75,19 @@ import java.util.Scanner;
 		public static int slucajniBroj (int min,  int max ) {
 			return min + (int)(Math.random()* ((max - min) + 1));
 		}
+		
+		public static String ucitajString(String poruka, boolean prazno) {
+			String s;
+			while(true) {
+				System.out.println(poruka+ ": ");
+				s = ulaz.nextLine();
+				if(!prazno && s.trim().isEmpty()) {
+					System.out.println("Obavezan unos");
+					continue;
+				}
+				return s;
+			}
+		}
+		
 }
 
