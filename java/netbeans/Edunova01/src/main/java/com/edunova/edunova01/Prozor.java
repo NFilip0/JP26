@@ -4,6 +4,10 @@
  */
 package com.edunova.edunova01;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -18,7 +22,7 @@ public class Prozor extends javax.swing.JFrame {
     public Prozor() {
         //poziv sljedece metode mora biti 1. u konstruktoru
         initComponents();
-        
+
         btnGumb.setText("Pozdravi svijet");
     }
 
@@ -39,6 +43,7 @@ public class Prozor extends javax.swing.JFrame {
         btnIspisi = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         taRezultat = new javax.swing.JTextArea();
+        btnPodaciIzBaze = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hello world");
@@ -77,6 +82,13 @@ public class Prozor extends javax.swing.JFrame {
         taRezultat.setRows(5);
         jScrollPane2.setViewportView(taRezultat);
 
+        btnPodaciIzBaze.setText("Podaci iz baze");
+        btnPodaciIzBaze.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPodaciIzBazeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -85,9 +97,7 @@ public class Prozor extends javax.swing.JFrame {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGumb)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -102,13 +112,20 @@ public class Prozor extends javax.swing.JFrame {
                                 .addComponent(btnIspisi, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(32, 32, 32)))
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))))
+                        .addGap(42, 42, 42))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnGumb)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPodaciIzBaze, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(104, 104, 104))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(btnGumb)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGumb)
+                    .addComponent(btnPodaciIzBaze))
                 .addGap(95, 95, 95)
                 .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,7 +153,7 @@ public class Prozor extends javax.swing.JFrame {
 
     private void btnGumbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGumbActionPerformed
         // TODO add your handling code here:
-        
+
         JOptionPane.showMessageDialog(rootPane, "Hello world");
     }//GEN-LAST:event_btnGumbActionPerformed
 
@@ -149,20 +166,42 @@ public class Prozor extends javax.swing.JFrame {
     }//GEN-LAST:event_txtDOActionPerformed
 
     private void btnIspisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIspisiActionPerformed
-        
+
         int pb = Integer.parseInt(txtOD.getText());
         int db = Integer.parseInt(txtDO.getText());
         StringBuilder sb = new StringBuilder();
-        for(int i = pb;i<=db;i++){
-        if(i%2==0){
-        sb.append(i);
-        sb.append("\n");
+        for (int i = pb; i <= db; i++) {
+            if (i % 2 == 0) {
+                sb.append(i);
+                sb.append("\n");
+            }
+            taRezultat.setText(sb.toString());
         }
-        taRezultat.setText(sb.toString());
-    }
-        
-        
+
+
     }//GEN-LAST:event_btnIspisiActionPerformed
+
+    private void btnPodaciIzBazeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPodaciIzBazeActionPerformed
+        try {
+            Connection connection = DriverManager.getConnection(
+                    "jdbc:mariadb://localhost:3306/edunovajp26",
+                    "root", ""
+            );
+            
+            PreparedStatement statement = connection.prepareStatement(
+                    "select * from smjer;");
+            ResultSet resultSet = statement.executeQuery();
+            String naziv;
+            while (resultSet.next()) {
+                naziv  = resultSet.getString("naziv");
+                System.out.println(naziv);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_btnPodaciIzBazeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,6 +241,7 @@ public class Prozor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnGumb;
     private javax.swing.JButton btnIspisi;
+    private javax.swing.JButton btnPodaciIzBaze;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
