@@ -1,4 +1,4 @@
-package edunova.util;
+package edunovaeclipse.util;
 import java.util.Scanner;
 
 

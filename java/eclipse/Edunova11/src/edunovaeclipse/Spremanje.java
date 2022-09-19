@@ -1,11 +1,11 @@
-package edunova;
+package edunovaeclipse;
 
 import java.util.List;
 
-import edunova.model.Grupa;
-import edunova.model.Polaznik;
-import edunova.model.Predavac;
-import edunova.model.Smjer;
+import edunovaeclipse.model.Grupa;
+import edunovaeclipse.model.Polaznik;
+import edunovaeclipse.model.Predavac;
+import edunovaeclipse.model.Smjer;
 
 public class Spremanje{
 	private List<Smjer> smjerovi;

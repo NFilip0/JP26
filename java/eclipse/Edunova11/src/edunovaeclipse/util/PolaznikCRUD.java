@@ -1,8 +1,8 @@
-package edunova.util;
+package edunovaeclipse.util;
 
 import java.util.List;
 
-import edunova.model.Polaznik;
+import edunovaeclipse.model.Polaznik;
 
 public class PolaznikCRUD {
 	

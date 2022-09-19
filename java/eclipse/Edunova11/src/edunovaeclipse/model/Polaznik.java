@@ -1,4 +1,4 @@
-package edunova.model;
+package edunovaeclipse.model;
 
 public class Polaznik extends Osoba {
 

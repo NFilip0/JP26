@@ -1,4 +1,4 @@
-package edunova.model;
+package edunovaeclipse.model;
 
 import java.math.BigDecimal;
 

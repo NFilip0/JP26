@@ -1,12 +1,12 @@
-package edunova.util;
+package edunovaeclipse.util;
 
 import java.util.List;
 
-import edunova.model.Clan;
-import edunova.model.Grupa;
-import edunova.model.Polaznik;
-import edunova.model.Predavac;
-import edunova.model.Smjer;
+import edunovaeclipse.model.Clan;
+import edunovaeclipse.model.Grupa;
+import edunovaeclipse.model.Polaznik;
+import edunovaeclipse.model.Predavac;
+import edunovaeclipse.model.Smjer;
 
 public class GrupaCRUD {
 	

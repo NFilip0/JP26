@@ -1,8 +1,8 @@
-package edunova.util;
+package edunovaeclipse.util;
 
 import java.util.List;
 
-import edunova.model.Smjer;
+import edunovaeclipse.model.Smjer;
 
 public class SmjerCRUD {
 	

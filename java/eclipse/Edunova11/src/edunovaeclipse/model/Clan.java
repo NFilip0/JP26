@@ -1,4 +1,4 @@
-package edunova.model;
+package edunovaeclipse.model;
 
 public class Clan extends Entitet{
 	

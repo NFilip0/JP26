@@ -1,4 +1,4 @@
-package edunova;
+package edunovaeclipse;
 
 import java.util.Scanner;
 
@@ -17,14 +17,14 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
-import edunova.model.Clan;
-import edunova.model.Grupa;
-import edunova.model.Polaznik;
-import edunova.model.Predavac;
-import edunova.model.Smjer;
-import edunova.util.GrupaCRUD;
-import edunova.util.Pomocno;
-import edunova.util.SmjerCRUD;
+import edunovaeclipse.model.Clan;
+import edunovaeclipse.model.Grupa;
+import edunovaeclipse.model.Polaznik;
+import edunovaeclipse.model.Predavac;
+import edunovaeclipse.model.Smjer;
+import edunovaeclipse.util.GrupaCRUD;
+import edunovaeclipse.util.Pomocno;
+import edunovaeclipse.util.SmjerCRUD;
 
 public class Start {
 	
