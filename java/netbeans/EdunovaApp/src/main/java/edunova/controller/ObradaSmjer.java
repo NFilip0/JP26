@@ -23,9 +23,7 @@ public class ObradaSmjer extends Obrada<Smjer> {
 
     @Override
     protected void kontrolaCreate() throws EdunovaException {
-        if (entitet == null) {
-            throw new EdunovaException("Smjer nije konstruiran");
-        }
+
         kontrolaNaziv();
         kontrolaCijena();
 
@@ -41,13 +39,16 @@ public class ObradaSmjer extends Obrada<Smjer> {
 
     }
 
+    @Override
+    protected String getNazivEntiteta() {
+        return "Smjer";
+    }
+
     private void kontrolaNaziv() throws EdunovaException {
 
         kontrolaNazivObavezno();
         kontrolaNazivIstiUBazi();
         kontrolaNazivBrojZnakova(50);
-        
-       
 
     }
 
@@ -62,21 +63,21 @@ public class ObradaSmjer extends Obrada<Smjer> {
         }
     }
 
-    private void kontrolaNazivObavezno() throws EdunovaException{
+    private void kontrolaNazivObavezno() throws EdunovaException {
         if (entitet.getNaziv() == null || entitet.getNaziv().isEmpty()) {
             throw new EdunovaException("Naziv smjera obavezno");
         }
     }
-    
-     private void kontrolaNazivBrojZnakova(int brojZnakova) throws EdunovaException{
-         if (entitet.getNaziv().length() > brojZnakova) {
+
+    private void kontrolaNazivBrojZnakova(int brojZnakova) throws EdunovaException {
+        if (entitet.getNaziv().length() > brojZnakova) {
             throw new EdunovaException("Naziv smjera ne smije imati više od " + brojZnakova + " znakova");
         }
 
     }
 
-    private void kontrolaNazivIstiUBazi() throws EdunovaException{
-         Smjer s = null;
+    private void kontrolaNazivIstiUBazi() throws EdunovaException {
+        Smjer s = null;
         try {
             s = session.createQuery("from Smjer s "
                     + " where s.naziv=:naziv ", Smjer.class)

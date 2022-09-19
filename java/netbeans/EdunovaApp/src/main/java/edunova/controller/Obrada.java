@@ -4,18 +4,17 @@
  */
 package edunova.controller;
 
-import edunova.model.Smjer;
+import edunova.model.Entitet;
 import edunova.util.EdunovaException;
 import edunova.util.HibernateUtil;
 import java.util.List;
-import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
 /**
  *
  * @author dell
  */
-public abstract class Obrada<T> {
+public abstract class Obrada<T extends Entitet> {
     
     protected T entitet;
     protected Session session;
@@ -24,12 +23,16 @@ public abstract class Obrada<T> {
     protected abstract void kontrolaCreate() throws EdunovaException;
     protected abstract void kontrolaUpdate() throws EdunovaException;
     protected abstract void kontrolaDelete() throws EdunovaException;
+    protected abstract String getNazivEntiteta();
 
     public Obrada() {
         this.session = HibernateUtil.getSession();
     }
     
     public void create() throws EdunovaException{
+        if (entitet == null) {
+            throw new EdunovaException(getNazivEntiteta() + " nije konstruiran");
+        }
         kontrolaCreate();
         persist();
     }
